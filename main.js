@@ -1,6 +1,9 @@
 const notesContainer = document.getElementById("app");
 const addNoteButton = notesContainer.querySelector(".add-note");
 
+var note = [{"id":16228,"content":"А это первая заметка"}];
+localStorage.setItem('stickynotes-notes', JSON.stringify(note));
+
 getNotes().forEach((note) => {
   const noteElement = createNoteElement(note.id, note.content);
   notesContainer.insertBefore(noteElement, addNoteButton);
